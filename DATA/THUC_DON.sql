@@ -1,0 +1,16 @@
+﻿SET DATEFORMAT ymd
+SET ARITHABORT, ANSI_PADDING, ANSI_WARNINGS, CONCAT_NULL_YIELDS_NULL, QUOTED_IDENTIFIER, ANSI_NULLS, NOCOUNT ON
+SET NUMERIC_ROUNDABORT, IMPLICIT_TRANSACTIONS, XACT_ABORT OFF
+GO
+
+-- Dữ liệu mẫu cho thực đơn
+INSERT INTO THUC_DON (MA_THUCDON, MA_MON, TEN_THUCDON, MA_CHINHANH)
+VALUES
+('TD001', 'MON001', 'Thực đơn cơm trưa', 'CN001'),
+('TD001', 'MON002', 'Thực đơn cơm trưa', 'CN001'),
+('TD001', 'MON003', 'Thực đơn cơm trưa', 'CN001'),
+('TD002', 'MON004', 'Thực đơn bữa tối', 'CN001'),
+('TD002', 'MON005', 'Thực đơn bữa tối', 'CN001'),
+('TD002', 'MON001', 'Thực đơn bữa tối', 'CN002'),
+('TD002', 'MON002', 'Thực đơn bữa tối', 'CN002');
+
