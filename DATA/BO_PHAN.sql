@@ -8,8 +8,6 @@ INSERT INTO BO_PHAN (MA_BOPHAN, TENBP) VALUES
 ('BP002', N'Phụ bếp'),
 ('BP003', N'Phục vụ'),
 ('BP004', N'Lễ tân'),
-('BP005', N'Quản lý'),
-('BP006', N'Thu ngân'),
-('BP007', N'Vệ sinh'),
-('BP008', N'Kho vận'),
-('BP009', N'Pha chế');
+('BP005', N'Thu ngân'),
+('BP006', N'Vệ sinh'),
+('BP007', N'Quản lý'),
