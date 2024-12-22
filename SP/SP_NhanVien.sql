@@ -1,0 +1,60 @@
+﻿--Thêm mới nhân viên
+CREATE PROCEDURE SP_ThemNhanVien
+	@MA_NV CHAR(10),
+	@MA_QUANLI CHAR(10),
+	@MA_CHINHANH CHAR(10),
+    @HOTEN NVARCHAR(100),
+    @MA_BOPHAN CHAR(10),
+    @NGSINH DATE,
+    @GIOITINH CHAR(1),
+    @SDT CHAR(10),
+    @LUONG FLOAT,
+    @DIEM_PV FLOAT,
+    @NGAY_BD DATE,
+    @NGAY_KT DATE
+AS
+BEGIN
+  INSERT INTO NHAN_VIEN (MA_NV, MA_QUANLI, MA_CHINHANH, HOTEN, MA_BOPHAN, NGSINH, GIOITINH, SDT, LUONG, DIEM_PV, NGAY_BD, NGAY_KT)
+  VALUES (@MA_NV, @MA_QUANLI, @MA_CHINHANH, @HOTEN, @MA_BOPHAN, @NGSINH, @GIOITINH, @SDT, @LUONG, @DIEM_PV, @NGAY_BD, @NGAY_KT);
+END;
+--Xem danh sách nhân viên theo chi nhánh
+CREATE PROCEDURE SP_LietKeNhanVienTheoChiNhanh
+  @MA_CHINHANH CHAR(10)
+AS
+BEGIN
+  SELECT * FROM NHAN_VIEN WHERE MA_CHINHANH = @MA_CHINHANH;
+END;
+--Cập nhật nhân viên
+CREATE PROCEDURE SP_CapNhatNhanVien
+    @MA_NV CHAR(10),
+	@MA_QUANLI CHAR(10),
+	@MA_CHINHANH CHAR(10),
+    @MA_BOPHAN CHAR(10),
+    @SDT CHAR(10),
+    @LUONG FLOAT,
+    @DIEM_PV FLOAT,
+    @NGAY_BD DATE,
+    @NGAY_KT DATE
+AS
+BEGIN
+    -- Kiểm tra xem nhân viên có tồn tại hay không
+    IF NOT EXISTS (SELECT 1 FROM NHAN_VIEN WHERE MA_NV = @MA_NV)
+    BEGIN
+        PRINT 'Nhân viên không tồn tại';
+        RETURN;
+    END
+
+    -- Tiến hành cập nhật nhân viên
+    UPDATE NHAN_VIEN
+    SET  
+        MA_QUANLI = @MA_QUANLI, 
+		MA_CHINHANH = @MA_CHINHANH, 
+		MA_BOPHAN = @MA_BOPHAN, 
+		SDT = @SDT, @LUONG = @LUONG, 
+		DIEM_PV = @DIEM_PV, 
+		NGAY_BD = @NGAY_BD,
+		NGAY_KT = @NGAY_KT
+    WHERE MA_NV = @MA_NV;
+
+    PRINT 'Cập nhật thành công';
+END;
