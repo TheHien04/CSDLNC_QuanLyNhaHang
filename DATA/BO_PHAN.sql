@@ -10,4 +10,4 @@ INSERT INTO BO_PHAN (MA_BOPHAN, TENBP) VALUES
 ('BP004', N'Lễ tân'),
 ('BP005', N'Thu ngân'),
 ('BP006', N'Vệ sinh'),
-('BP007', N'Quản lý'),
+('BP007', N'Quản lý');
