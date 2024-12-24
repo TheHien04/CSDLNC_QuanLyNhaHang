@@ -34,4 +34,4 @@ VALUES
 ('MON027', N'Ebi Fry (tôm chiên xù)', 70000, '1'),
 ('MON028', N'Hiyayakko (đậu hũ lạnh)', 50000, '1'),
 ('MON029', N'Agedashi Tofu (đậu hũ chiên giòn)', 60000, '0'),
-('MON030', N'Anmitsu (món tráng miệng thạch trái cây)', 85000, '0'),
+('MON030', N'Anmitsu (món tráng miệng thạch trái cây)', 85000, '0');
