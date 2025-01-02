@@ -12,7 +12,7 @@ BEGIN
   INSERT INTO KHACH_HANG (MA_KH, HOTEN, SDT, EMAIL, CCCD, GIOITINH, DIACHI)
   VALUES (@MA_KH, @HO_TEN, @SDT, @EMAIL, @CCCD, @GIOITINH, @DIACHI);
 END;
-
+go
 --Tìm kiếm khách hàng 
 CREATE PROCEDURE SP_TimKhachHangTheoSDT
   @SDT CHAR(10)
@@ -20,7 +20,7 @@ AS
 BEGIN
   SELECT * FROM KHACH_HANG WHERE SDT = @SDT;
 END;
-
+go
 --Cập nhật thông tin khách hàng
 CREATE PROCEDURE SP_CapNhatKhachHang
   @MA_KH CHAR(10),
